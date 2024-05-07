@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Pokémon CRUD</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.8.0/css/bulma.min.css">
+</head>
+<body>
+  <article class="section">
+    <form id="pokemonForm">
+      <h1 class="title is-4">Pokémon CRUD</h1>
+
+      <label class="label">ID</label>
+      <input class="input" type="text" id="pokemonId" name="id">
+
+      <label class="label">English Name</label>
+      <input class="input" type="text" id="englishName" name="nameEnglish">
+
+      <label class="label">French Name</label>
+      <input class="input" type="text" id="frenchName" name="nameFrench">
+
+      <label class="label">Type</label>
+      <input class="input" type="text" id="type" name="type">
+
+      <label class="label">Base Stats</label>
+      <input class="input" type="text" id="baseHP" name="baseHP" placeholder="HP">
+      <input class="input" type="text" id="baseAttack" name="baseAttack" placeholder="Attack">
+      <input class="input" type="text" id="baseDefense" name="baseDefense" placeholder="Defense">
+      <input class="input" type="text" id="baseSpAttack" name="baseSpAttack" placeholder="Sp. Attack">
+      <input class="input" type="text" id="baseSpDefense" name="baseSpDefense" placeholder="Sp. Defense">
+      <input class="input" type="text" id="baseSpeed" name="baseSpeed" placeholder="Speed">
+
+      <div class="box">
+        <button class="button is-info" id="btnInsert" type="button">
+          Insert (HTTP POST)
+        </button>
+        <button class="button is-primary" id="btnUpdate" type="button">
+          Update (HTTP PUT)
+        </button>        
+        <button class="button is-danger" id="btnDelete" type="button">
+          Delete (HTTP DELETE)
+        </button>           
+      </div>
+
+      <div class="notification is-warning" id="notifier"></div>
+    </form>
+  </article>
+  <script src="tester.js"></script> 
+</body>
+</html>
