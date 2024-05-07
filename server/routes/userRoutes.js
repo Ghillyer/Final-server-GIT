@@ -7,6 +7,22 @@ const jwt = require('jsonwebtoken');
 const router = express.Router();
 
 
+router.get('/', asyncHandler(async (req, res) => {
+    try {
+        const users = await User.find({}); 
+        res.json(users.map(user => ({
+            _id: user._id,
+            username: user.username,
+            email: user.email
+        })));
+    } catch (error) {
+        console.error("Error fetching users:", error);
+        res.status(500).json({ error: "Internal server error" });
+    }
+}));
+
+
+
 router.post('/signup', asyncHandler(async (req, res) => {
     const { username, email, password } = req.body;
     const userExists = await User.findOne({ email });
