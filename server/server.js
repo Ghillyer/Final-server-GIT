@@ -10,14 +10,13 @@ app.use(cors());
 app.use(express.json()); 
 
 
-const userRoutes = require('./routes/userRoutes');
+const userRoutes = require('./routes/userRoutes.js'); 
 app.use('/api/users', userRoutes);
 
-
-
-
-const cardRoutes = require('./routes/cardRoutes');
+const cardRoutes = require('./routes/cardRoutes.js');
 app.use('/api/cards', cardRoutes);
+
+
 
 app.use('/uploads', express.static('uploads'));
 
